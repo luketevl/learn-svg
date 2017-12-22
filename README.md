@@ -122,6 +122,149 @@ Learn about SVG
 <svg viewBox="x y minX minY"></svg>
 ```
 
+## BASIC SHAPES
+
+- React or Square | Rectangule or Square
+```html
+<svg>
+  <rect x="0" y="0" width="200" height=""></rect>
+</svg>
+```
+
+- Circle
+  - **r** | raio
+  - **cx** | axis X
+  - **cy** | axis Y
+```html
+<svg>
+  <circle r="25" cx="70" cy="70" />
+</svg>
+```
+
+- Ellipse
+  - **rx** | raio axis X
+  - **ry** | raio axis Y
+  - **cx** | axis X
+  - **cy** | axis Y
+```html
+<svg>
+  <ellipse r="25" cx="70" cy="70" />
+</svg>
+```
+- Line
+```html
+<svg>
+  <line x1="10" y1="10" x2="100" y2="120" stroke="#000" stroke-width="2" />
+</svg>
+```
+- Polyline
+```html
+<svg>
+  <polyline points="0,40 40,40 40,80" fill="transparent" stroke="#000" stroke-width="2" />
+</svg>
+```
+- Polygon
+```html
+<svg>
+  <polygon points="0,40 40,40 40,80" fill="transparent" stroke="#000" stroke-width="2" />
+</svg>
+```
+- Path
+  - **M** | Moveto
+  - **L** | Lineto
+  - **A** | Arcs
+  - **z** | Closepath
+```html
+<svg>
+  <path
+    stroke=#000"
+    stroke-width="4"
+    fill="none"
+    d="M40,20 L40,80 A30,30 0 0,0 100,100z"
+  />
+</svg>
+```
+![Basic shape PATH](https://i.imgur.com/0OJ0zmr.png)
+
+
+## Container elements
+- **Defs** | Container that contains elements for **reuse**, only visible case you **call**
+```html
+<svg>
+  <defs>
+    <circle id="my-circle" />
+  </defs>
+  <use xlink:href="my-circle">
+  <use xlink:href="my-circle" x="80">
+</svg
+```
+- **G** | Group elements similar
+```html
+<svg>
+  <g fill="red">
+    <circle id="my-circle" />
+    <circle id="my-circle2" />
+  </g>
+</svg
+```
+- **Symbol** | Define an Object if will instance and used by **use** and have your self **viewbox**
+```html
+<svg>
+  <symbol id="my-circle" viewBox="0 0 200 100">
+    <circle/>
+  </symbol>
+  <use xlink:href="my-circle">
+  <use xlink:href="my-circle" x="80">
+</svg
+```
+
+## STYLING SVG
+
+### Fill and Stroke
+```html
+<style>
+  .circle{
+    stroke: #000;
+    stroke-width: 5;
+    
+  }
+  .circle-1{
+    fill: #F82;
+    fill-opacity: .3;
+    stroke-dasharray: size| space;
+    stroke-dashoffset: 100; */ effect to draw stroke */
+  }
+  .circle-2{
+    fill: #FF0000;
+    fill-opacity: .7;
+  }
+</style>
+<svg viewBox="x y minX minY">
+  <circle class="circle circle-1" r="25" cx="70" cy="70" />
+  <circle class="circle circle-2" r="25" cx="70" cy="70" />
+</svg>
+```
+- Fill
+  - **currentColor** | get the color of the parent
+  
+```html
+<script>
+  .currentColor{
+    color: #00FF00;
+  }
+</script>
+<svg class="currentColor" viewBox="x y minX minY">
+  <path
+    stroke=#000"
+    stroke-width="4"
+    fill="currentColor"
+    d="M40,20 L40,80 A30,30 0 0,0 100,100z"
+  />
+</svg>
+```
+## 
+
+
 
 # OBSERVATIONS
 
