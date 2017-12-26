@@ -10,7 +10,7 @@ Learn about SVG
 - https://iconmonstr.com/
 - https://useiconic.com/
 - https://github.com/willianjusten/awesome-svg/blob/master/topics/Icons.md
-
+- https://www.npmjs.com/package/gulp-svg-sprites
 
 
 # SVG
