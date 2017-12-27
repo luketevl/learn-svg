@@ -11,6 +11,10 @@ Learn about SVG
 - https://useiconic.com/
 - https://github.com/willianjusten/awesome-svg/blob/master/topics/Icons.md
 - https://www.npmjs.com/package/gulp-svg-sprites
+- https://d3js.org/
+- http://snapsvg.io/
+- https://greensock.com/
+- https://bonsaijs.org/
 
 
 # SVG
@@ -186,6 +190,13 @@ Learn about SVG
 ```
 ![Basic shape PATH](https://i.imgur.com/0OJ0zmr.png)
 
+## TEXTS
+- Creating texts with svg
+```html
+<svg>
+  <text x="0" y="40" fill="#000">Text</text>
+</svg>
+```
 
 ## Container elements
 - **Defs** | Container that contains elements for **reuse**, only visible case you **call**
@@ -262,9 +273,54 @@ Learn about SVG
   />
 </svg>
 ```
-## 
+## SMIL
+> Frameworks animate css
+- `<animate>`
+```html
+<svg>
+  <circle r="25" cx="70" cy="70">
+    <animate attributeName="cx" from="0" to="100" dur="5s" repeatCount="infinite" />
+  </circle>
+</svg>
 
+<!-- or -->
+<svg>
+  <circle id="animation" r="25" cx="70" cy="70" />
+    <animate xlink:href="#animation" attributeName="cx" from="50" to="450" dur="3s" fill="freeze" begin="click" id="animation-circle" />
+    <animate xlink:href="#animation" attributeName="cx" from="50" to="450" dur="3s" fill="freeze" begin="animation-circle.begin + 1s" />
+</svg>
+```
 
+- `<set>` | shortcode for animate
+- `<animateMotion>`
+```html
+<svg>
+  <circle id="animation" r="25" cx="70" cy="70" />
+    <animateMotion xlink:href="#animation" dur="3s" fill="freeze" begin="click" path="M0,0.........." />
+</svg>
+```
+
+- `<animateColor>`
+- `<animateTransform>`
+- `keypoints` attribute
+
+### MORPH PATH
+
+## USING JAVASCRIPT
+- **Create** svg element  
+  - **NS** are **namespace**
+```javascript
+const circle = document.createElementNS('http://www.w3.org/2000/svg', "circle");
+```
+- **Create** attributes
+- params(namspace, attributeName, value)
+```javascript
+circle.setAttributeNS(null, "r", 10);
+```
+- **AppendChild**
+```javascript
+draw.appendChild(circle;
+```
 
 # OBSERVATIONS
 
